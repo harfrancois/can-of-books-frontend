@@ -4,7 +4,9 @@ import { Carousel } from 'react-bootstrap';
 import bookImg from './book.jpeg';
 
 let SERVER = process.env.REACT_APP_SERVER;
+
 console.log('hello world');
+
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);
@@ -17,15 +19,14 @@ class BestBooks extends React.Component {
 
   getBooks = async () => {
     try {
-      // remember we can grab with a  parameter as well 
-      // let results = await axios(`${SERVER}/cats?location=Bremerton`);
+      // remember we can grab with a  parameter as well
       // let url = `${SERVER}/books?email=${this.props.user.email}`;
 
       let results = await axios.get(`${SERVER}/books?email=${this.props.user.email}`);
       this.setState({
         books: results.data
       });
-      console.log('proof of life');
+      // console.log('proof of life');
     } catch (error) {
       console.log('we have an error: ', error.message);
     }

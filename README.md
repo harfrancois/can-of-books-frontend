@@ -1,4 +1,11 @@
-# Start your own "Can of Books" App
+# Project Name "Can of Books"
+
+**Version**: 1.8.0 (increment the patch/fix version number if you make more commits past your first submission)
+
+**Author**: Brian Thornburg, Harvey Francois, Rey Mercado
+
+## Overview
+<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
 This repository has starter code to begin work on creating your own online bookshelf.
 
@@ -6,14 +13,99 @@ This repository has starter code to begin work on creating your own online books
 
 Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
 
+## Getting Started
+<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
 ## Use this template
 
 Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
-Process: Professional Pairing Practice
+
+## Architecture
+<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+## Change Log
+Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
+
+02-28-2022 7:00pm - Completed Repository setup
+
+02-28-2022 8:55pm - Completed Storage
+
+02-28-2022 10:55pm - Book component in progress
+
+03-01-2022 7:55pm - Book component complete
+
+## Estimates
+
+Name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Name of feature: Setup
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 2:00 p.m.
+
+Pause Time: 4:30 p.m.
+
+Resume Time: 6:30 p.m.
+
+Finish time: 7:00 p.m.
+
+Actual time needed to complete: 3 hours
+
+Name of feature: Storage
+
+Estimate of time needed to complete: 1 hourt s
+
+Start time: 7:00 p.m.
+
+Finish time: 8:55 p.m.
+
+Actual time needed to complete: 1 hour 55 minutes
+
+Name of feature: Book component
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:00 p.m.
+
+Pause time: 10:05 p.m.
+
+Continue time: 2:00 p.m. 03-01-2022
+
+Pause time: 5:00 p.m.
+
+Continue time: 6:30 p.m.
+
+Finish time: 7:55 p.m.
+
+Actual time needed to complete: 5 hours 30 minutes
+
+## Credit and Collaborations
+<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+TA Justin Hammerly helped with back-end deployment on Heroku 2-28-2022
+
+TA Kassie Bradshaw helped with connecting database 2-28-2022
+
+Tanner Percival helped with connecting database 2-28-2022
+
+Ryan Gallaway helped with rendering carousel and made today's code review available in class repo 3-01-2022
+
+## Process: Professional Pairing Practice
+
 Much of the work you will be doing in the industry will be in pairs. In order to best prepare you for this, you will be working with the same partner all week on this book app project.
 Before you begin to even think about your application, take at least 30 minutes to make a team agreement with your partner. This is an essential step to ensure a peaceful and productive week. You MUST answer the following questions in your agreement and include it in your README’s “Collaboration” section:
 
-Logistical
+### Logistical
+
 What hours will you be available to communicate?
 Brian is in Central and finishes 11pm Pacific Time (1am central) usually
 Brian is available after lunch hour to 4, has a break 4-6pm Pacific Time, but is around after 6pm until 11pm PST, and usually not available until 9am start of class
@@ -31,7 +123,9 @@ Ask TA’s for advice/assistance
 Timely communication with group members
 If needed ask Ryan
 Possibly shorten or forego breaks per group agreement
-Cooperative
+
+### Cooperative
+
 Make a list of each person’s strengths.
 Rey
 Good at referring to docs
@@ -68,21 +162,24 @@ Improving overall knowledge and speed to finish tasks sooner
 Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development?
 “Pair programming, everyone gets a turn. ”-plan with 3 people is only one still drives… one is primary navigator, and one is secondary navigator- alternate once an hour on average or at logical end of task
 Team meeting at start and end of day where we address what each has done, if there is anything we didn’t get to, clarification on things, what the plan is to do next. A few minutes for each person.
-Conflict Resolution
-What will your team do if one person is pulling all the weight while the other person is not contributing?
+
+### Conflict Resolution
+
+-What will your team do if one person is pulling all the weight while the other person is not contributing?
 “Slap some sense into the other person and tell them to get it together.”-Harvey
 Call for emergency group meeting to problem solve issue
 If needed we can contact Ryan
 Maintain judgment-free space
 Make sure person who is causing the issue is informed by the other members letting him know
-What will your team do if one person is taking over the project and not letting the other member contribute?
+
+-What will your team do if one person is taking over the project and not letting the other member contribute?
 “I will say if you want to do the entire project, go ahead.” - Harvey
 Call for emergency group meeting to problem solve issue
 Make sure person who is causing the issue is informed by the other members letting him know
-How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
+
+-How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
 “I’m not the best at react so I'm going to need the help.” - Harvey 
 Seek advice of instructor and/or ta on how to mitigate
 Promise to be patient to each other
 Pose questions to other team members on what the purpose of pieces of code are
 Agree to a plan to address and adjust as needed
-
