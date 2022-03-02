@@ -35,6 +35,19 @@ class BestBooks extends React.Component {
     this.getBooks();
   }
 
+  postBook = async (newBook) => {
+    try{
+      let url = `${SERVER}/books`;
+      let createdBook = await axios.post(url, newBook);
+      console.log(createdBook.data);
+      this.setState({
+        books: [...this.state.books, createdBook.data]
+      })
+      } catch(error){
+        console.log(' There is an error: ', error.message);
+      }
+  }
+
   render() {
     console.log('BestBook state', this.state);
     /* TODO: render user's books in a Carousel */
