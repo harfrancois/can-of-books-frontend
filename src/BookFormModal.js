@@ -36,7 +36,7 @@ class BookFormModal extends React.Component {
                 <Form.Check value='true' type="checkbox" label="Read" />
               </Form.Group>
               <Button variant="primary" type="submit ">
-                Add BOOK
+                Add Book
               </Button>
             </Form>
           </Modal.Body>
