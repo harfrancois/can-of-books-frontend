@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Carousel } from 'react-bootstrap';
 import bookImg from './book.jpeg';
+import AddBookButton from './AddBookButton.js';
 
 let SERVER = process.env.REACT_APP_SERVER;
 
@@ -31,21 +32,34 @@ class BestBooks extends React.Component {
       console.log('we have an error: ', error.message);
     }
   };
-  componentDidMount() {
-    this.getBooks();
-  }
 
   postBook = async (newBook) => {
-    try{
+    try {
       let url = `${SERVER}/books`;
       let createdBook = await axios.post(url, newBook);
       console.log(createdBook.data);
       this.setState({
         books: [...this.state.books, createdBook.data]
-      })
-      } catch(error){
-        console.log(' There is an error: ', error.message);
-      }
+      });
+    } catch (error) {
+      console.log(' There is an error: ', error.message);
+    }
+  }
+  deleteBook = async (id) => {
+    try {
+      let url = `${SERVER}/books/${id}`;
+      await axios.delete(url);
+      const updatedBooks = this.state.books.filter(book => book._id !== id);
+      this.setState({
+        books: updatedBooks
+      });
+    } catch (error) {
+      console.log('There is an error:', error.message);
+    }
+  }
+
+  componentDidMount() {
+    this.getBooks();
   }
 
   render() {
@@ -58,13 +72,19 @@ class BestBooks extends React.Component {
     return (
       <>
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
+        <AddBookButton
+          user={this.props.user}
+          handleBookSubmit={this.postBook}
+        />
         {this.state.books.length > 0 ? (
           <Carousel>
             {this.state.books.map((book, idx) => (
               <Carousel.Item className='h-100'
                 key={idx}>
                 <img
+                  className="d-block w-100 h-50"
                   src={bookImg}
+                  alt={book.name}
                 />
                 <Carousel.Caption>
                   <h1>{book.title}</h1>

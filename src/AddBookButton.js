@@ -1,4 +1,4 @@
-import { render } from 'express/lib/response';
+
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import BookFormModal from './BookFormModal.js';
@@ -46,3 +46,4 @@ class AddBookButton extends React.Component {
     );
   }
 }
+export default AddBookButton;
