@@ -8,7 +8,7 @@ class BookFormModal extends React.Component {
       title: e.target.title.value,
       email: this.props.user.email, //parent is addabookbutton
       description: e.target.description.value,
-      status: e.target.status.checked
+      status: e.target.status.value
     };
     console.log("New book: ", newBook);
     this.props.handleBookSubmit(newBook);
@@ -26,14 +26,18 @@ class BookFormModal extends React.Component {
             <Form onSubmit={this.handleSubmit}>
               <Form.Group controlId="title" >
                 <Form.Label>Book Title: </Form.Label>
+                <Form.Control type="text" />
               </Form.Group>
               <Form.Group controlId="description">
                 <Form.Label>Description: </Form.Label>
                 <Form.Control type="text" />
               </Form.Group>
-              <Form.Group>
-                <Form.Check type="checkbox" label="Read" />
+              <Form.Group controlId='status'>
+                <Form.Check value='true' type="checkbox" label="Read" />
               </Form.Group>
+              <Button variant="primary" type="submit ">
+                Add BOOK
+              </Button>
             </Form>
           </Modal.Body>
           <Modal.Footer> </Modal.Footer>
