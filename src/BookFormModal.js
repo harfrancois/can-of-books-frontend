@@ -10,7 +10,7 @@ class BookFormModal extends React.Component {
       description: e.target.description.value,
       status: e.target.status.value
     };
-    console.log("New book: ", newBook);
+    console.log('New book: ', newBook);
     this.props.handleBookSubmit(newBook);
     this.props.close();
   };
@@ -36,7 +36,7 @@ class BookFormModal extends React.Component {
                 <Form.Check value='true' type="checkbox" label="Read" />
               </Form.Group>
               <Button variant="primary" type="submit ">
-                Add BOOK
+                Add Book
               </Button>
             </Form>
           </Modal.Body>
