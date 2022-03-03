@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Carousel } from 'react-bootstrap';
 import bookImg from './book.jpeg';
 import AddBookButton from './AddBookButton.js';
+import DeleteButton from './DeleteButton.js';
 
 let SERVER = process.env.REACT_APP_SERVER;
 
@@ -88,7 +89,10 @@ class BestBooks extends React.Component {
                 />
                 <Carousel.Caption>
                   <h1>{book.title}</h1>
-                  <h2>{book.description}</h2>
+                  <h3>{book.description}</h3>
+                  <DeleteButton
+                    book_id={book._id}
+                    deleteBook={this.deleteBook}/>
                 </Carousel.Caption>
               </Carousel.Item>))}
           </Carousel>

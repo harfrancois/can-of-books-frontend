@@ -24,7 +24,7 @@ class AddBookButton extends React.Component {
   };
 
   render() {
-    console.log("AddBookButton state: ", this.state);
+    console.log('AddBookButton state: ', this.state);
     return (
       <>
         {
