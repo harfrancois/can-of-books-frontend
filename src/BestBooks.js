@@ -4,6 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import bookImg from './book.jpeg';
 import AddBookButton from './AddBookButton.js';
 import DeleteButton from './DeleteButton.js';
+import UpdateBookButton from './UpdateBookButton';
 
 let SERVER = process.env.REACT_APP_SERVER;
 
@@ -59,6 +60,21 @@ class BestBooks extends React.Component {
     }
   }
 
+  updateBook = async (book) => {
+    try {
+      let url = `${SERVER}/books/${book._id}`;
+      let updatedBook = await axios.put(url, book);
+      console.log(updatedBook);
+      this.getBooks();
+      // const updatedBooks = this.state.books.filter(book => book._id !== id);
+      // this.setState({
+      //   books: updatedBooks
+      // });
+    } catch (error) {
+      console.log('There is an error:', error.message);
+    }
+  }
+
   componentDidMount() {
     this.getBooks();
   }
@@ -93,6 +109,11 @@ class BestBooks extends React.Component {
                   <DeleteButton
                     book_id={book._id}
                     deleteBook={this.deleteBook}/>
+                  <UpdateBookButton
+                    book={book}
+                    updateBook={this.updateBook}
+                    user={this.props.user}
+                  />
                 </Carousel.Caption>
               </Carousel.Item>))}
           </Carousel>
