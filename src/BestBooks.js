@@ -5,6 +5,8 @@ import bookImg from './book.jpeg';
 import AddBookButton from './AddBookButton.js';
 import DeleteButton from './DeleteButton.js';
 import UpdateBookButton from './UpdateBookButton';
+import { withAuth0 } from '@auth0/auth0-react';
+
 
 let SERVER = process.env.REACT_APP_SERVER;
 
@@ -21,17 +23,28 @@ class BestBooks extends React.Component {
   /* TODO: Make a GET request to your API to fetch books for the logged in user  */
 
   getBooks = async () => {
-    try {
-      // remember we can grab with a  parameter as well
-      // let url = `${SERVER}/books?email=${this.props.user.email}`;
+    console.log('i am here ', this.props.auth0.isAuthenticated);
+    if (this.props.auth0.isAuthenticated) {
 
-      let results = await axios.get(`${SERVER}/books?email=${this.props.user.email}`);
-      this.setState({
-        books: results.data
-      });
-      // console.log('proof of life');
-    } catch (error) {
-      console.log('we have an error: ', error.message);
+      console.log('i am inside here');
+
+      try {
+        // get token
+        const res  = await this.props.auth0.getIdTokenClaims();
+        // must use double underscore
+        const jwt = res.__raw;
+        console.log(jwt);
+        // remember we can grab with a  parameter as well
+        // let url = `${SERVER}/books?email=${this.props.user.email}`;
+
+        let results = await axios.get(`${SERVER}/books?email=${this.props.user.email}`);
+        this.setState({
+          books: results.data
+        });
+        // console.log('proof of life');
+      } catch (error) {
+        console.log('we have an error: ', error.message);
+      }
     }
   };
 
@@ -108,7 +121,7 @@ class BestBooks extends React.Component {
                   <h3>{book.description}</h3>
                   <DeleteButton
                     book_id={book._id}
-                    deleteBook={this.deleteBook}/>
+                    deleteBook={this.deleteBook} />
                   <UpdateBookButton
                     book={book}
                     updateBook={this.updateBook}
@@ -125,4 +138,4 @@ class BestBooks extends React.Component {
   }
 }
 
-export default BestBooks;
+export default withAuth0(BestBooks);
